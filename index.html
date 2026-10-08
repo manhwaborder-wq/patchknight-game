@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Patch Knight</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
+
+    <!-- Spielcade Developer SDK -->
+    <script src="https://spielcade.com/spielcade-sdk.js"></script>
+
+    <!-- Sandbox Polyfill (Safe localStorage & cookie in iframe embeds) -->
+    <script type="text/javascript">
+      (function() {
+        var memStorage = {};
+        var mockStorage = {
+          getItem: function(k) { return memStorage.hasOwnProperty(k) ? memStorage[k] : null; },
+          setItem: function(k, v) { memStorage[k] = String(v); },
+          removeItem: function(k) { delete memStorage[k]; },
+          clear: function() { memStorage = {}; },
+          key: function(i) { return Object.keys(memStorage)[i] || null; },
+          get length() { return Object.keys(memStorage).length; }
+        };
+        try {
+          var t = window.localStorage;
+          t.getItem('__test__');
+        } catch(e) {
+          try { Object.defineProperty(window, 'localStorage', { value: mockStorage, configurable: true, writable: true }); } catch(x){}
+          try { Object.defineProperty(window, 'sessionStorage', { value: mockStorage, configurable: true, writable: true }); } catch(x){}
+        }
+      })();
+    </script>
+
+    <style>
+      html, body {
+        background: #000;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      #game {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+      }
+      #game canvas {
+        cursor: none;
+      }
+      #rotate {
+        display: none;
+      }
+      @media (orientation: portrait) and (pointer: coarse) {
+        #rotate {
+          z-index: 10;
+          background: #120d1e;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          position: fixed;
+          inset: 0;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-DeViXUVO.js"></script>
+  </head>
+  <body>
+    <div id="game" role="application" aria-label="Patch Knight, a top-down action game"></div>
+    <div id="rotate" role="img" aria-label="Turn your device sideways to play">
+      <svg width="160" height="160" viewBox="0 0 64 64" fill="none" stroke="#ffd060" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="22" y="10" width="20" height="36" rx="3" />
+        <line x1="30" y1="41" x2="34" y2="41" />
+        <path d="M14 52 A22 22 0 0 0 50 52" />
+        <path d="M44 47 L50 52 L44 56" />
+      </svg>
+    </div>
+  </body>
+</html>

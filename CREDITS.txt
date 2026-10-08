@@ -1,0 +1,39 @@
+# Credits
+
+All third-party assets in this game allow commercial use. Credit is not
+required by their licenses, but we give it anyway.
+
+## Art, audio and fonts
+
+### Ninja Adventure Asset Pack
+- Authors: [Pixel-boy](https://pixel-boy.itch.io/) and [AAA](https://www.instagram.com/challenger.aaa/)
+- Source: https://pixel-boy.itch.io/ninja-adventure-asset-pack
+- License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) (copy in `assets/ninja-adventure/Ninja Adventure - Asset Pack/LICENSE.txt`)
+- Used for: characters, face portraits, monsters, bosses, tilesets, UI, FX, items, music, sound effects, fonts
+- Support the authors: https://www.patreon.com/pixelarchipel
+
+### 16x16 DungeonTileset II (v1.7)
+- Author: [0x72](https://0x72.itch.io/)
+- Source: https://0x72.itch.io/dungeontileset-ii
+- License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) (the zip ships no license file, so the itch.io page's license is recorded in `assets/dungeontileset-ii/LICENSE.txt`)
+- Used for: dungeon walls and floors, spike traps, demons
+
+## Code libraries
+- Phaser 3 (MIT) - shipped inside the game; keep its MIT notice with any build you sell
+- Vite (MIT, build tool only, not shipped)
+
+## Fonts
+The game uses the player's system font (Segoe UI / Tahoma / Arial or the platform's
+sans-serif). No font file is bundled, so no font license applies.
+
+### Lilita One (title lettering only)
+- Author: Juan Montoreano
+- Source: https://github.com/google/fonts/tree/main/ofl/lilitaone
+- License: [SIL Open Font License 1.1](https://openfontlicense.org)
+- Used for: the "PATCH KNIGHT" title drawn into the Android launch screen, the game's
+  loading screen and the store images. The font file itself is not shipped. OFL allows
+  commercial use.
+
+## App icons and store images
+Made from the CC0 sprites above (Knight, Ranger, Mage, Demon Lord, goblin, skeleton, floor
+and wall tiles). Original composition, no third-party artwork.
